@@ -18,7 +18,7 @@ This repository is designed for educational exploration of cybersecurity concept
    - Navigate to the encoded file, click "RAW", and copy the URL.
 
 3. **FlipperZero/BadUSB Preparation**
-   - Replace the URL in `keylog_encoded.txt` with the one from step 2.
+   - Replace the URL in `keylog_encoded.txt` with the one from step 2 and replace all mentions of '.txt' with your encoded file.
    - Use qFlipper or any file management tool to upload `keylog_encoded.txt` to your BadUSB device.
 
 ## To-Do List
