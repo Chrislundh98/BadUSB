@@ -32,4 +32,4 @@ I would like to extend my gratitude to my professors and peers at Jönköping Sc
 
 ### Contact Information
 
-For further inquiries or discussions related to this project, please feel free to reach out.
+For further inquiries or discussions related to this project, please feel free to reach out through Discord: stoffe2677, or LinkedIn: https://www.linkedin.com/in/christoffer-lundh-639322235/
