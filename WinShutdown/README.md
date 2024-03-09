@@ -7,4 +7,4 @@
 This is a DuckyScript designed to utilize keystroke injection and Windows cmd to turn off your computer
 
 ## Plug 'n play!
-just drag and drop the ´.txt´ file into your badUSB folder on your flipper zero and run it. 
+just drag and drop the `WinShutdown.txt` file into your badUSB folder on your flipper zero and run it. 
