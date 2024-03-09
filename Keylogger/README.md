@@ -2,7 +2,7 @@
 > **Disclaimer**: This project is strictly for educational purposes only. The developer assumes no responsibility for any malicious use of the files in this repository.
 
 ## Developed by Chris
-
+## Category: Malware/Recon
 ## Description
 This repository is designed for educational exploration of cybersecurity concepts using FlipperZero/BadUSB. It includes DuckyScripts, PowerShell commands, Base64 encoding/decoding, Python scripts, and utilizes Discord for reporting. The script functions as a keylogger, recording keystrokes to `key_logs.txt` and sending this file's content to a specified Discord server every minute. **Note**: This keylogger is tailored for Windows devices only.
 
