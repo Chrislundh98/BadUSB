@@ -1,0 +1,10 @@
+REM The following DuckyScript turns off a Windows computer
+DELAY 500
+GUI r
+DELAY 500
+STRING cmd
+DELAY 500
+ENTER
+DELAY 500
+STRING shutdown /s /t 0
+ENTER
