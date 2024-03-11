@@ -19,8 +19,8 @@ REM Try-Catch block for error handling in PowerShell
 STRING try {
 ENTER
 
-REM Step 1: Sort Desktop
-STRING $desktopPath = [Environment]::GetFolderPath("Desktop"); Get-ChildItem $desktopPath | Where-Object {$_.Extension -ne ".lnk"} | Sort-Object Extension | Move-Item -Destination {$desktopPath + "\Sorted\" + $_.Extension.TrimStart('.')} -Force -ErrorAction Stop
+REM Step 1: Sort Desktop including Shortcuts
+STRING $desktopPath = [Environment]::GetFolderPath("Desktop"); Get-ChildItem $desktopPath | Sort-Object Name | ForEach-Object { $destFolder = if ($_.Extension -eq ".lnk") { "Shortcuts" } else { $_.Extension.TrimStart('.') }; if (-not (Test-Path "$desktopPath\Sorted\$destFolder")) { New-Item -ItemType Directory -Path "$desktopPath\Sorted\$destFolder" -Force }; Move-Item $_.FullName -Destination "$desktopPath\Sorted\$destFolder" -Force } -ErrorAction Stop
 ENTER
 DELAY 500
 
@@ -34,8 +34,8 @@ STRING powercfg -h off
 ENTER
 DELAY 500
 
-REM Update all software via winget
-STRING winget upgrade --all
+REM Attempt to upgrade all software via winget with force and silent options
+STRING winget upgrade --all --force --accept-source-agreements --accept-package-agreements --silent
 ENTER
 DELAY 500
 
