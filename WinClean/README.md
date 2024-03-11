@@ -1,4 +1,4 @@
-<work in progress>
+> **CURRENTLY UNDER DEVELOPMENT**
 # This tool is designed to cleanup windows
 > **Disclaimer** Do not use this script if you're utilizing Windows Hibernation mode, this script is mainly designed for lab computers where the hard drive is removable but can be used on any Windows computer.
 ## Developed by Chris
