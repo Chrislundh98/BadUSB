@@ -25,6 +25,13 @@ STRING $desktopPath = [Environment]::GetFolderPath("Desktop"); Get-ChildItem $de
 ENTER
 DELAY 500
 
+GUI d  ; Minimize all windows and show the desktop
+DELAY 300
+STRING {F5}  ; Simulate pressing F5 to refresh the desktop
+DELAY 300
+GUI d  ; Bring back all previously open windows or press again to view desktop
+
+
 REM Step 2: Clean Temporary Files
 STRING Remove-Item -path $env:TEMP\* -Recurse -Force -ErrorAction Stop; Remove-Item -path C:\Windows\Temp\* -Recurse -Force -ErrorAction Stop
 ENTER
