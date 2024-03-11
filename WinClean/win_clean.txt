@@ -1,0 +1,37 @@
+REM Title: Clean & Optimize Windows Desktop
+REM Description: Sorts desktop, cleans temp files, and disables hibernate state.
+
+DELAY 500
+GUI r
+DELAY 500
+STRING powershell
+DELAY 500
+CTRL-SHIFT ENTER
+DELAY 1000
+ALT y
+DELAY 500
+
+REM Step 1: Sort Desktop
+STRING $desktopPath = [Environment]::GetFolderPath("Desktop")
+ENTER
+DELAY 500
+STRING Get-ChildItem $desktopPath | Where-Object {$_.Extension -ne ".lnk"} | Sort-Object Extension | Move-Item -Destination {$desktopPath + "\Sorted\" + $_.Extension.TrimStart('.')} -Force
+ENTER
+DELAY 500
+
+REM Step 2: Clean Temporary Files
+STRING Remove-Item -path $env:TEMP\* -Recurse -Force
+ENTER
+DELAY 500
+STRING Remove-Item -path C:\Windows\Temp\* -Recurse -Force
+ENTER
+DELAY 500
+
+REM Step 3: Disable Hibernate
+STRING powercfg -h off
+ENTER
+DELAY 500
+
+REM Exit PowerShell
+STRING exit
+ENTER
