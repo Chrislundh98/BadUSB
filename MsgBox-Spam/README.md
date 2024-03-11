@@ -1,3 +1,4 @@
+> **UPDATED**
 # Windows Messagebox spammer
 > **Disclaimer**: This project is strictly for educational purposes only. The developer assumes no responsibility for any malicious use of the files in this repository.
 
