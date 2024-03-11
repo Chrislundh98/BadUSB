@@ -1,4 +1,4 @@
-> **UPDATED**
+> **UPDATED** 2024-03-11 18:40 CET
 # Windows Messagebox spammer
 > **Disclaimer**: This project is strictly for educational purposes only. The developer assumes no responsibility for any malicious use of the files in this repository.
 
