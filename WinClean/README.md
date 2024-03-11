@@ -5,3 +5,5 @@
 ### Description
 Removes the hibernate system files to free up loads of space (gigabytes), deletes temp files and cleans/sorts your desktop. This script is not harmful and is designed to quickly clean your computer with the press of a button
 
+### Description 2.0
+Added functionality for maintenance, error handling and logging.
