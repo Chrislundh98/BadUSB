@@ -1,0 +1,63 @@
+REM Enhanced Clean & Optimize Script with Error Handling and Logging
+
+DELAY 500
+GUI r
+DELAY 500
+STRING powershell
+DELAY 500
+CTRL-SHIFT ENTER
+DELAY 1000
+ALT y
+DELAY 500
+
+REM Define a log file
+STRING $logPath = "$env:USERPROFILE\Desktop\CleanupLog.txt"; "Logging started at $(Get-Date)" | Out-File -FilePath $logPath
+ENTER
+DELAY 500
+
+REM Try-Catch block for error handling in PowerShell
+STRING try {
+ENTER
+
+REM Step 1: Sort Desktop
+STRING $desktopPath = [Environment]::GetFolderPath("Desktop"); Get-ChildItem $desktopPath | Where-Object {$_.Extension -ne ".lnk"} | Sort-Object Extension | Move-Item -Destination {$desktopPath + "\Sorted\" + $_.Extension.TrimStart('.')} -Force -ErrorAction Stop
+ENTER
+DELAY 500
+
+REM Step 2: Clean Temporary Files
+STRING Remove-Item -path $env:TEMP\* -Recurse -Force -ErrorAction Stop; Remove-Item -path C:\Windows\Temp\* -Recurse -Force -ErrorAction Stop
+ENTER
+DELAY 500
+
+REM Step 3: Disable Hibernate
+STRING powercfg -h off
+ENTER
+DELAY 500
+
+REM Update all software via winget
+STRING winget upgrade --all
+ENTER
+DELAY 500
+
+REM System File Check
+STRING sfc /scannow
+ENTER
+DELAY 500
+
+REM Start Disk Cleanup in silent mode
+STRING cleanmgr /sagerun:1
+ENTER
+DELAY 500
+
+REM Drive Optimization
+STRING Optimize-Volume -DriveLetter C -ReTrim -Verbose
+ENTER
+DELAY 500
+
+STRING } catch { $_ | Out-File -FilePath $logPath -Append }; "Script completed at $(Get-Date)" | Out-File -FilePath $logPath -Append
+ENTER
+DELAY 500
+
+REM Exit PowerShell
+STRING exit
+ENTER
