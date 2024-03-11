@@ -1,0 +1,36 @@
+REM --- Start of DuckyScript for Windows ---
+DELAY 500
+GUI r
+DELAY 500
+STRING powershell Start-Process "http://www.youtube.com/watch?v=dQw4w9WgXcQ"
+ENTER
+DELAY 2000
+ALT SPACE
+DELAY 100
+STRING x
+DELAY 1000
+GUI r
+DELAY 500
+STRING sndvol
+ENTER
+DELAY 1000
+TAB
+TAB
+TAB
+TAB
+TAB
+TAB
+ENTER
+DELAY 500
+REM The following lines max out the volume, adjust the loop for precision
+LOOP 20
+    STRING {UP}
+    DELAY 100
+ENDLOOP
+ENTER
+DELAY 500
+GUI r
+DELAY 500
+STRING powershell (New-Object -ComObject WScript.Shell).SendKeys(' ')
+ENTER
+REM --- End of DuckyScript for Windows ---
