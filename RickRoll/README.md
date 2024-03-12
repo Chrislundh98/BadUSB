@@ -8,4 +8,4 @@
 ### Category: Prank
 ### Plug 'n Play
 ### Description:
-Set the volume to max and play Rick Astley for your friends to enjoy, both normal and ear rape version available for windows and mac, these are basic plug 'n play, 
+Set the volume to max and play Rick Astley for your friends to enjoy, both normal and ear rape version available for windows and mac, these are basic plug 'n play.
