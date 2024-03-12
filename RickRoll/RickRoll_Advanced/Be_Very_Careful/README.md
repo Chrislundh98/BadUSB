@@ -1,6 +1,11 @@
+# Advanced Rickroll script for Windows only
+> **Disclaimer**: This project is strictly for educational purposes only. The developer assumes no responsibility for any malicious use of the files in this repository.
 
-> Disclaimer! this one might bluescreen your pc
-> endless loop of opening Rickroll youtube tabs
-> theres one comment in the script # ALL GAS NO BREAK PC GO BOOM
+## Developed by Chris
 
-use `death_by_rickroll.txt`
+## Category: Prank/Malicious
+### **Plug 'n play**
+## Description
+Be very careful with this one, once the script start it will be very hard to stop it. 
+The scrip is an endless loop of opening youtube tabs with rickroll until the pc crashes/bluescreen.
+Drag and drop the `death_by_rickroll.txt`into your badUSB folder and run the script.
