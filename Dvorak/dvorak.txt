@@ -1,5 +1,5 @@
 DELAY 2000
 GUI r
 DELAY 500
-STRING powershell -w h -NoP -NonI -Ep Bypass -Command "& {$langList = Get-WinUserLanguageList; $langList[0].InputMethodTips.Add('0409:00010409'); Set-WinUserLanguageList $langList -Force;}"
+STRING powershell -w h -NoP -NonI -Ep Bypass -Command "& { $dvorakLang = New-WinUserLanguageList en-US; $dvorakLang[0].InputMethodTips.Add('0409:00010409'); Set-WinUserLanguageList $dvorakLang -Force; }"
 ENTER
